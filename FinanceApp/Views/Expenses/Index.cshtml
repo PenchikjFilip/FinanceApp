@@ -1,0 +1,25 @@
+﻿@model IEnumerable<FinanceApp.Models.Expense>
+
+<h2>My Expenses</h2>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var expense in Model)
+    {
+        <tr>
+            <td>@expense.Date.ToShortDateString()</td>
+            <td>@expense.Amount.ToString("C")</td>
+            <td>@expense.Category</td>
+            <td>@expense.Description</td>
+        </tr>
+    }
+    </tbody>
+</table>
